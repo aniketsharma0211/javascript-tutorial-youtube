@@ -41,4 +41,16 @@ console.log(mergedObjects1) /*
                                 tinderuser: { id: 1234, name: 'aniket', isLoggedIn: false }
                                 }*/
 
-                                
+
+
+/**######################## Destructuring Objects ########################*/
+const course = {
+     coursename : "Javascript",
+     instructor : "Aniket",
+     price: 999
+}
+
+
+const {instructor: inst} = course // curly brace determines destructuring
+console.log(inst)
+
