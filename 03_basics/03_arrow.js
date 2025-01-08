@@ -51,3 +51,14 @@ console.log(user1.welcomeMessage()) //prints welcome aniket
 console.log(user1.welcomeMessageArrow()) // Prints Welcome undefined.
 
 //This is because arrow function doesnt create its own execution context.
+
+
+// return object from arrow function
+// we need to add paranthesis
+
+const arrowtest = () => ({
+    name: "Aniket",
+    price: "test"
+})
+
+console.log(arrowtest())
