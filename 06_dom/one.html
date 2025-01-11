@@ -2,10 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .bg-black{
+            background-color: black;
+            color: white;
+        }
+    </style>
     <title>Document</title>
-</head>
-<body>
-    
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, iusto eum nisi corrupti enim voluptas consequuntur amet voluptatibus similique. Illo rem facere velit cupiditate tenetur veniam! Nihil saepe minima porro.</p>
+    </div>
+    <ul>
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+    </ul>
 </body>
 </html>
+
+<!--
+document.getElementById('title') // <h1 id="title" class="test">DOM learning</h1>
+
+document.getElementById('title').id //title
+
+document.getElementById('title').className //heading
+
+document.getElementById('title').getAttribute('id') //title
+
+document.getElementById('title').getAttribute('class') //heading
+
+document.getElementById('title').setAttribute('class', 'test') //always overrides doesnt add.
+
+// right way to do 
+document.getElementById('title').setAttribute('class', 'heading test') //always overrides doesnt add.
+
+const titleElement = document.getElementById('title')
+
+titleElement.style.backgroundColor = 'green'
+
+
+titleElement.textContent //returns "DOM learning" text
+titleElement.innerHTML //returns "DOM learning" text
+titleElement.innerText //returns "DOM learning" text
+
+
+difference - 
+innerText - displays the text visible on page. It DOESN'T show any text that is hidden by display:none or any css.
+
+innerText - displays the text visible on page. It shows all text
+
+innerHTML - returns the entire HTML(including tags)
+
+-->
+
+
+
+<!---------------------Query Selector similar to jquery--------------------------->
+<!--
+document.querySelector('h1') //returns first h1 element in document.
+document.querySelector('#title') //this is searching with id
+document.querySelector('.heading')//this is searching with class
+document.querySelector('input[type="password"]') //input type password is returned
+
+
+
+const unlist = document.querySelector('ul');
+const firstli = unlist.querySelector('li');
+firstli.style.background = 'green'
+firstli.style.background = 'green'
+ul.querySelector('li').innerText = 'test'
+-->
+
+
+<!---------------------Query Selector all similar to jquery--------------------------->
+
+
+<!--
+const lis = document.querySelectorAll('li')// returns "Nodelist" array. foreach available but no map etc.
+lis.forEach((li)=> li.style.color='black')
+
+const modified lis = lis.map((li)=> li + "test")//will not work
+
+
+const tempclasslist = document.getElementsByClassName('item') //returns "HTMLCollection" array no foreach etc..
+
+const arrTempClassList = Array.from(tempclasslist);
+arrTempClassList.foreach((li)=>li.style.color = 'orange')
+
+
+
+
+
+
+
+
+-->
