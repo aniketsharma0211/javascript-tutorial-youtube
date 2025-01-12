@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: white;">
+    
+</body>
+<script>
+    const firstdiv = document.createElement('div');
+    const firstHeading = document.createElement('h3');
+    console.log(firstdiv)
+    firstdiv.className='test'
+    firstdiv.id = Math.random();
+    firstHeading.innerText="test";//first brings existing value then pushes the value
+    //firstdiv.innerHTML = firstHeading     
+    const textNode = document.createTextNode("testtt")
+    firstdiv.appendChild(textNode);
+    document.body.appendChild(firstdiv)
+</script>
+</html>
+
+
+<!--prefer using setAttribute over directly setting the value-->

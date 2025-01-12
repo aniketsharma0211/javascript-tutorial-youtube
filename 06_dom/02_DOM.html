@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Javascript learning</title>
+</head>
+<body style="background-color:black; color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+
+    </div>
+</body>
+<script>
+    const parent = document.querySelector('.parent');//mind the single quotes
+    console.log(parent)
+    console.log(parent.children)// returns "HTMLCollection"
+    console.log(parent.children[1].innerHTML)
+    // for(i=0;i<parent.children.length;i++){
+    //     console.log(parent.children[i].innerHTML)
+    //     //parent.children[i].innerText=""
+    // }
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+    const dayOne = document.querySelector('.day')//performance impact
+    console.log(dayOne)
+    console.log(dayOne.parentElement)
+    console.log(dayOne.nextElementSibling)
+    console.log(parent.childNodes)
+    // Output: 11 nodes - considers newline as well
+    //1. text new line character
+    //2. first child div
+    //3. text new line character
+    //4. second child div
+    //5. text new line character
+    //6. third child div
+    //7. text new line character
+    //8. fourth child div
+    //9. text new line character
+    //10. second child div
+    //11. text new line character
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+        <li>Java</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerText = langName;//avoid using innerHTML here - 
+        // When you assign a value to innerHTML, the browser interprets the string as HTML, 
+        // parsing it and creating the corresponding DOM elements.If you set innerHTML,
+        //  the existing children of the element are removed and replaced with the new content. 
+        // This means the browser destroys the old DOM tree beneath the element and 
+        // constructs a new one based on the HTML provided.
+        const ul = document.querySelector('.language');
+        ul.appendChild(li);
+    }
+    addLanguage('Python');
+
+    function addlanguageOptimized(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li);
+    }
+    // Edit elements
+    const secondli = document.querySelector('li:nth-child(2)')
+    const newli = document.createElement('li');
+    newli.appendChild(document.createTextNode("test"));
+    secondli.replaceWith(newli)
+
+    const firstElement = document.querySelector('li:first-child')
+    firstElement.outerHTML = '<li>ghatiya</li>';
+
+    const lastElement = document.querySelector('li:last-child')
+    lastElement.remove()
+    </script>
+</html>
