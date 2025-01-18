@@ -1,0 +1,78 @@
+<!--
+An AJAX (Asynchronous JavaScript and XML) call allows you to send and 
+receive data from a server asynchronously without reloading the web page.
+
+const xhr = new XMLHttpRequest();
+
+// Open a GET request
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
+
+xhr.onreadystatechange = ()=>{
+    console.log(xhr.readyState);
+}
+
+// Define the callback function to handle the response
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    // Parse JSON data
+    const data = JSON.parse(xhr.responseText);
+    console.log(data);
+  } else {
+    console.error(`Error: ${xhr.status}`);
+  }
+};
+// Handle network errors
+xhr.onerror = function () {
+  console.error('Request failed');
+};
+
+//open is called only when send is invoked.
+// Send the request
+xhr.send();
+
+
+
+How It Works
+AJAX Request:
+
+The browser sends a request to the server using JavaScript (e.g., with XMLHttpRequest, fetch, or libraries like Axios).
+The request is asynchronous, meaning the main thread (responsible for rendering the webpage) is not blocked.
+Receive Response:
+
+Once the server processes the request, it sends back a response. This response can be:
+Raw text
+HTML
+JSON (commonly used in modern web apps)
+XML (less common today)
+Update DOM Dynamically:
+
+After the response is received,
+ JavaScript modifies specific parts of the DOM (Document Object Model) to reflect the new data. 
+ This is done using methods like:
+document.querySelector()
+element.innerHTML
+element.textContent
+element.appendChild()
+element.setAttribute()
+No Full Page Reload:
+
+Only the targeted parts of the webpage are updated. 
+The browser does not reload the page or request all resources (CSS, JavaScript, etc.) again.
+
+
+Why It Works
+The onload handler is registered before the request is sent using send().
+ This ensures that when the server responds, the browser knows which callback to invoke to handle the response.
+
+The server will only send a response after it receives the request, so there’s no way the client receives the response before calling send().
+
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+
+
+
+
+-->
